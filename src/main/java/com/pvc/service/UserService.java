@@ -1,9 +1,9 @@
 package com.pvc.service;
 
+import com.pvc.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.pvc.entity.User;
 import com.pvc.repository.UserRepository;
 
 /**
@@ -18,7 +18,7 @@ public class UserService implements IUserService {
 
 	@Override
 	public User getUserById(Long userId) {
-		User obj = userDAO.findOne(userId);
+		User obj = userDAO.findById(userId).get();
 		return obj;
 	}
 
