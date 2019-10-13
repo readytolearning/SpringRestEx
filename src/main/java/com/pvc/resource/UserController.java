@@ -35,42 +35,11 @@ public class UserController {
 		return new ResponseEntity<List<User>>(users, HttpStatus.OK);
 	}
 	
-	@PostMapping("user")
-	public @ResponseBody User addArticle(@RequestBody User user) {
-        return userService.saveUser(user);
+	@PostMapping("saveUser")
+	@CrossOrigin(origins = "http://localhost:4200")
+	public ResponseEntity<User> saveUser(@RequestBody User user) {
+				// Call service and save Object
+     		return new ResponseEntity<User>(user, HttpStatus.OK);
 	}
-	
-	/*@GetMapping("data")
-	public @ResponseBody UserInfo getData() {
-       // return userService.saveUser(user);
-	    
-
-		InstagramService service = new InstagramAuthService()
-				.apiKey("4350cb515fad42dc8e2923e6d9a9cb41")
-				.apiSecret("ec874976fcea439994becb60528b8f77")
-				.callback("http://localhost:8080")     
-				.build();
-		//Token token = service.getRequestToken();
-		// Verifier verifier = new Verifier(CODE);
-
-	        Token accessToken = service.getAccessToken(service);
-	        Instagram instagram = new Instagram(accessToken);
-		//Instagram instagram = new Instagram("54614847f50c452fa407e5840341c529");
-		UserInfo userInfo = null;
-		try {
-			userInfo = instagram.getCurrentUserInfo();
-		} catch (InstagramException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		System.out.println(userInfo.getData().getUsername());
-
-		
-		
-		return userInfo;
-	}
-	
-	*/
-	
 
 } 
