@@ -42,4 +42,4 @@ I have added one or more tests that prove my fix is effective or that my feature
 - [ ] I have added Jest tests
 - [ ] I have added Integration tests
 
-### [PR Submission Guidelines](../blob/trunk/docs/workflow/CONTRIBUTING.md)
+### [PR Submission Guidelines](test.md)
